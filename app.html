@@ -1,0 +1,142 @@
+<html>
+<style>
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+        --gray: #34495e;
+        --darkgray: #2c3e50;
+    }
+
+    body {
+        background-color: rgb(17, 17, 17);
+        font-family: 'Khula', sans-serif;
+        font-weight: 300;
+        color: white;
+        line-height: 1em;
+        margin: 0;
+        padding: 2em 1em;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    form {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+
+    select {
+        /* Reset Select */
+        appearance: none;
+        outline: 0;
+        border: 0;
+        box-shadow: none;
+        /* Personalize */
+        flex: 1;
+        padding: 0 1em;
+        color: #fff;
+        background-color: var(--darkgray);
+        background-image: none;
+        cursor: pointer;
+    }
+
+    /* Remove IE arrow */
+    select::-ms-expand {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Custom Select wrapper */
+    .select {
+        position: relative;
+        display: flex;
+        width: 20em;
+        height: 3em;
+        border-radius: .25em;
+        overflow: hidden;
+    }
+
+    /* Arrow */
+    .select::after {
+        content: '\25BC';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1em;
+        background-color: #34495e;
+        transition: .25s all ease;
+        pointer-events: none;
+    }
+
+    /* Transition */
+    .select:hover::after {
+        color: #f39c12;
+    }
+    label {
+ font-family:'Roboto', sans-serif;
+ font-size: large;
+}
+.form-submit-button {
+	background: #B9DFFF;
+	color: #000000;
+	border: 1px solid #eee;
+    width: 15%;
+	border-radius: 20px;
+	text-shadow: none;
+}
+
+.form-submit-button:hover {
+	background: #f39c12;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
+
+</style>
+
+<body>
+
+    <h1>Finterk Prophet</h1>
+    <p>Alpha v1</p>
+    <br><br>    
+        
+        <div class="container">
+            <label style="text-align: center;" for="data">Select Input Data</label>
+        <br><br>
+            <div class="select">
+                <select id="selectbox" name="data">
+                    <option value="/grocery.html">Generic Grocery Data</option>
+                    <option value="/rossmann.html">Rossmann Sale Data</option>
+                </select>
+                <button onclick="myFunction()" class="form-submit-button">Submit</button>
+
+            </div>
+        </div><br><br>
+
+    
+</body>
+<script type="text/javascript">
+    function myFunction(){
+        location.href=document.getElementById("selectbox").value;
+    }       
+</script>
+
+</html>
